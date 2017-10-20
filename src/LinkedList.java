@@ -1,14 +1,29 @@
 
 public class LinkedList {
 	ListElement head; 
+	ListElement tail;
 	
 	    public void add(int new_data)
 	    {
 	    	ListElement element = new ListElement(new_data);
-	        element.next = head;
-	        head = element;
+	    	if (isempty()) {
+	    		element.next = null;
+	    		element.prev = null;
+	    		head = element;
+	    		tail = element;
+	    	}
+	    	else {
+	    		head.prev = element;
+	    		element.next = head;
+	    		element.prev = null;
+	    		head = element;
+	    	}
+	    	
 	    }
-	 
+	    
+	    public boolean isempty() {
+	    	return (head == null);
+	    }
 	   
 	    void deleteNode(int index)
 	    {
