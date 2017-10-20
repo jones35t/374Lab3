@@ -8,6 +8,8 @@ public class test {
 		mylist.add(8);
 		mylist.add(19);
 		mylist.add(50);
+		mylist.printList();
+		System.out.println(mylist.getElement(2));
 		mylist.deleteNode(2);
 		mylist.printList();
 
